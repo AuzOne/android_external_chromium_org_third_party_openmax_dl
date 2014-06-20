@@ -26,16 +26,16 @@ LOCAL_SRC_FILES := \
 	third_party/openmax_dl/dl/sp/src/armSP_FFT_F32TwiddleTable.c \
 	third_party/openmax_dl/dl/sp/src/arm/armSP_FFT_S32TwiddleTable.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_C_FC32.c \
-	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_C_SC16.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_C_SC32.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_R_F32.c \
-	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_R_S16.c \
-	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_R_S16S32.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_R_S32.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_C_FC32.c \
+	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_R_F32.c \
+	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_C_SC16.c \
+	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_R_S16.c \
+	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_R_S16S32.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_C_SC16.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_C_SC32.c \
-	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_R_F32.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_R_S16.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_R_S16S32.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_R_S32.c \
