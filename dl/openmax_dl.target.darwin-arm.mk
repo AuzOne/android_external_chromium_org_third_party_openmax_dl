@@ -26,16 +26,16 @@ LOCAL_SRC_FILES := \
 	third_party/openmax_dl/dl/sp/src/armSP_FFT_F32TwiddleTable.c \
 	third_party/openmax_dl/dl/sp/src/arm/armSP_FFT_S32TwiddleTable.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_C_FC32.c \
-	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_C_SC16.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_C_SC32.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_R_F32.c \
-	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_R_S16.c \
-	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_R_S16S32.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_R_S32.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_C_FC32.c \
+	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_R_F32.c \
+	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_C_SC16.c \
+	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_R_S16.c \
+	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_R_S16S32.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_C_SC16.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_C_SC32.c \
-	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_R_F32.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_R_S16.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_R_S16S32.c \
 	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_R_S32.c \
@@ -147,6 +147,7 @@ MY_DEFS_Debug := \
 	'-DDATA_REDUCTION_DEV_HOST="http://proxy-dev.googlezip.net:80/"' \
 	'-DSPDY_PROXY_AUTH_ORIGIN="https://proxy.googlezip.net:443/"' \
 	'-DDATA_REDUCTION_PROXY_PROBE_URL="http://check.googlezip.net/connect"' \
+	'-DDATA_REDUCTION_PROXY_WARMUP_URL="http://www.gstatic.com/generate_204"' \
 	'-DVIDEO_HOLE=1' \
 	'-DBIG_FFT_TABLE' \
 	'-DUSE_OPENSSL=1' \
@@ -249,6 +250,7 @@ MY_DEFS_Release := \
 	'-DDATA_REDUCTION_DEV_HOST="http://proxy-dev.googlezip.net:80/"' \
 	'-DSPDY_PROXY_AUTH_ORIGIN="https://proxy.googlezip.net:443/"' \
 	'-DDATA_REDUCTION_PROXY_PROBE_URL="http://check.googlezip.net/connect"' \
+	'-DDATA_REDUCTION_PROXY_WARMUP_URL="http://www.gstatic.com/generate_204"' \
 	'-DVIDEO_HOLE=1' \
 	'-DBIG_FFT_TABLE' \
 	'-DUSE_OPENSSL=1' \
