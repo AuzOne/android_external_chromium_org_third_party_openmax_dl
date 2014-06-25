@@ -24,37 +24,30 @@ GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
 	third_party/openmax_dl/dl/sp/src/armSP_FFT_F32TwiddleTable.c \
-	third_party/openmax_dl/dl/sp/src/x86/omxSP_FFTFwd_RToCCS_F32_Sfs.c \
-	third_party/openmax_dl/dl/sp/src/x86/omxSP_FFTGetBufSize_R_F32.c \
-	third_party/openmax_dl/dl/sp/src/x86/omxSP_FFTInit_R_F32.c \
-	third_party/openmax_dl/dl/sp/src/x86/omxSP_FFTInv_CCSToR_F32_Sfs.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix2_fs.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix2_ls.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix2_ls_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix2_ms.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix4_fs.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix4_fs_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix4_ls.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix4_ls_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix4_ms.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix4_ms_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix2_fs.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix2_ls.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix2_ls_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix2_ms.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix4_fs.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix4_fs_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix4_ls.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix4_ls_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix4_ms.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix4_ms_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_F32_radix2_kernel.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_F32_radix4_kernel.c
+	third_party/openmax_dl/dl/sp/src/arm/armSP_FFT_S32TwiddleTable.c \
+	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_C_FC32.c \
+	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_C_SC32.c \
+	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_R_F32.c \
+	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTGetBufSize_R_S32.c \
+	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_C_FC32.c \
+	third_party/openmax_dl/dl/sp/src/arm/omxSP_FFTInit_R_F32.c \
+	third_party/openmax_dl/dl/sp/src/arm/arm64/armSP_FFT_CToC_FC32_Radix2_fs_s.S \
+	third_party/openmax_dl/dl/sp/src/arm/arm64/armSP_FFT_CToC_FC32_Radix2_ls_s.S \
+	third_party/openmax_dl/dl/sp/src/arm/arm64/armSP_FFT_CToC_FC32_Radix2_s.S \
+	third_party/openmax_dl/dl/sp/src/arm/arm64/armSP_FFT_CToC_FC32_Radix4_fs_s.S \
+	third_party/openmax_dl/dl/sp/src/arm/arm64/armSP_FFT_CToC_FC32_Radix4_ls_s.S \
+	third_party/openmax_dl/dl/sp/src/arm/arm64/armSP_FFT_CToC_FC32_Radix4_s.S \
+	third_party/openmax_dl/dl/sp/src/arm/arm64/armSP_FFT_CToC_FC32_Radix8_fs_s.S \
+	third_party/openmax_dl/dl/sp/src/arm/arm64/omxSP_FFTInv_CToC_FC32.c \
+	third_party/openmax_dl/dl/sp/src/arm/arm64/omxSP_FFTFwd_CToC_FC32.c \
+	third_party/openmax_dl/dl/sp/src/arm/arm64/armSP_FFTInv_CCSToR_F32_preTwiddleRadix2_s.S \
+	third_party/openmax_dl/dl/sp/src/arm/arm64/omxSP_FFTFwd_RToCCS_F32.c \
+	third_party/openmax_dl/dl/sp/src/arm/arm64/ComplexToRealFixup.S \
+	third_party/openmax_dl/dl/sp/src/arm/arm64/omxSP_FFTInv_CCSToR_F32.c
 
 
 # Flags passed to both C and C++ files.
 MY_CFLAGS_Debug := \
-	-fstack-protector \
 	--param=ssp-buffer-size=4 \
 	-fno-exceptions \
 	-fno-strict-aliasing \
@@ -64,14 +57,10 @@ MY_CFLAGS_Debug := \
 	-pipe \
 	-fPIC \
 	-Wno-unused-local-typedefs \
-	-msse2 \
 	-Wno-format \
-	-m64 \
-	-march=x86-64 \
 	-ffunction-sections \
 	-funwind-tables \
 	-g \
-	-fstack-protector \
 	-fno-short-enums \
 	-finline-limit=64 \
 	-Wa,--noexecstack \
@@ -154,7 +143,6 @@ LOCAL_CPPFLAGS_Debug := \
 
 # Flags passed to both C and C++ files.
 MY_CFLAGS_Release := \
-	-fstack-protector \
 	--param=ssp-buffer-size=4 \
 	-fno-exceptions \
 	-fno-strict-aliasing \
@@ -164,14 +152,10 @@ MY_CFLAGS_Release := \
 	-pipe \
 	-fPIC \
 	-Wno-unused-local-typedefs \
-	-msse2 \
 	-Wno-format \
-	-m64 \
-	-march=x86-64 \
 	-ffunction-sections \
 	-funwind-tables \
 	-g \
-	-fstack-protector \
 	-fno-short-enums \
 	-finline-limit=64 \
 	-Wa,--noexecstack \
@@ -264,8 +248,6 @@ LOCAL_LDFLAGS_Debug := \
 	-Wl,--fatal-warnings \
 	-Wl,-z,noexecstack \
 	-fPIC \
-	-m64 \
-	-fuse-ld=gold \
 	-nostdlib \
 	-Wl,--no-undefined \
 	-Wl,--exclude-libs=ALL \
@@ -280,8 +262,6 @@ LOCAL_LDFLAGS_Release := \
 	-Wl,--fatal-warnings \
 	-Wl,-z,noexecstack \
 	-fPIC \
-	-m64 \
-	-fuse-ld=gold \
 	-nostdlib \
 	-Wl,--no-undefined \
 	-Wl,--exclude-libs=ALL \
