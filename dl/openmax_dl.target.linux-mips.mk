@@ -23,39 +23,22 @@ LOCAL_GENERATED_SOURCES :=
 GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
-	third_party/openmax_dl/dl/sp/src/armSP_FFT_F32TwiddleTable.c \
-	third_party/openmax_dl/dl/sp/src/x86/omxSP_FFTFwd_RToCCS_F32_Sfs.c \
-	third_party/openmax_dl/dl/sp/src/x86/omxSP_FFTGetBufSize_R_F32.c \
-	third_party/openmax_dl/dl/sp/src/x86/omxSP_FFTInit_R_F32.c \
-	third_party/openmax_dl/dl/sp/src/x86/omxSP_FFTInv_CCSToR_F32_Sfs.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix2_fs.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix2_ls.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix2_ls_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix2_ms.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix4_fs.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix4_fs_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix4_ls.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix4_ls_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix4_ms.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Fwd_Radix4_ms_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix2_fs.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix2_ls.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix2_ls_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix2_ms.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix4_fs.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix4_fs_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix4_ls.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix4_ls_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix4_ms.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_CToC_FC32_Inv_Radix4_ms_sse.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_F32_radix2_kernel.c \
-	third_party/openmax_dl/dl/sp/src/x86/x86SP_FFT_F32_radix4_kernel.c
+	third_party/openmax_dl/dl/sp/src/mips/mips_FFTFwd_RToCCS_F32_complex.c \
+	third_party/openmax_dl/dl/sp/src/mips/mips_FFTFwd_RToCCS_F32_real.c \
+	third_party/openmax_dl/dl/sp/src/mips/mips_FFTInv_CCSToR_F32_complex.c \
+	third_party/openmax_dl/dl/sp/src/mips/mips_FFTInv_CCSToR_F32_real.c \
+	third_party/openmax_dl/dl/sp/src/mips/omxSP_FFT_F32TwiddleTable.c \
+	third_party/openmax_dl/dl/sp/src/mips/omxSP_FFTFwd_RToCCS_F32_Sfs.c \
+	third_party/openmax_dl/dl/sp/src/mips/omxSP_FFTGetBufSize_R_F32.c \
+	third_party/openmax_dl/dl/sp/src/mips/omxSP_FFTInit_R_F32.c \
+	third_party/openmax_dl/dl/sp/src/mips/omxSP_FFTInv_CCSToR_F32_Sfs.c
 
 
 # Flags passed to both C and C++ files.
 MY_CFLAGS_Debug := \
 	-fstack-protector \
 	--param=ssp-buffer-size=4 \
+	 \
 	-fno-exceptions \
 	-fno-strict-aliasing \
 	-Wno-unused-parameter \
@@ -64,10 +47,10 @@ MY_CFLAGS_Debug := \
 	-pipe \
 	-fPIC \
 	-Wno-unused-local-typedefs \
-	-msse2 \
+	-std=c99 \
 	-Wno-format \
-	-m64 \
-	-march=x86-64 \
+	-EL \
+	-mhard-float \
 	-ffunction-sections \
 	-funwind-tables \
 	-g \
@@ -144,6 +127,7 @@ LOCAL_CPPFLAGS_Debug := \
 	-fno-threadsafe-statics \
 	-fvisibility-inlines-hidden \
 	-Wno-deprecated \
+	-Wno-uninitialized \
 	-std=gnu++11 \
 	-Wno-narrowing \
 	-Wno-literal-suffix \
@@ -156,6 +140,7 @@ LOCAL_CPPFLAGS_Debug := \
 MY_CFLAGS_Release := \
 	-fstack-protector \
 	--param=ssp-buffer-size=4 \
+	 \
 	-fno-exceptions \
 	-fno-strict-aliasing \
 	-Wno-unused-parameter \
@@ -164,10 +149,10 @@ MY_CFLAGS_Release := \
 	-pipe \
 	-fPIC \
 	-Wno-unused-local-typedefs \
-	-msse2 \
+	-std=c99 \
 	-Wno-format \
-	-m64 \
-	-march=x86-64 \
+	-EL \
+	-mhard-float \
 	-ffunction-sections \
 	-funwind-tables \
 	-g \
@@ -244,6 +229,7 @@ LOCAL_CPPFLAGS_Release := \
 	-fno-threadsafe-statics \
 	-fvisibility-inlines-hidden \
 	-Wno-deprecated \
+	-Wno-uninitialized \
 	-std=gnu++11 \
 	-Wno-narrowing \
 	-Wno-literal-suffix \
@@ -264,8 +250,8 @@ LOCAL_LDFLAGS_Debug := \
 	-Wl,--fatal-warnings \
 	-Wl,-z,noexecstack \
 	-fPIC \
-	-m64 \
-	-fuse-ld=gold \
+	-EL \
+	-Wl,--no-keep-memory \
 	-nostdlib \
 	-Wl,--no-undefined \
 	-Wl,--exclude-libs=ALL \
@@ -280,8 +266,8 @@ LOCAL_LDFLAGS_Release := \
 	-Wl,--fatal-warnings \
 	-Wl,-z,noexecstack \
 	-fPIC \
-	-m64 \
-	-fuse-ld=gold \
+	-EL \
+	-Wl,--no-keep-memory \
 	-nostdlib \
 	-Wl,--no-undefined \
 	-Wl,--exclude-libs=ALL \
